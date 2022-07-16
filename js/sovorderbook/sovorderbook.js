@@ -465,7 +465,7 @@ for (var i=0; i < size; i++)
 
 
 // Load EOS market
-var defaultmarket = 8;
+var defaultmarket = 1;
 
 var lastmarket = _getCookie("lastmarket");
 
