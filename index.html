@@ -1,5 +1,594 @@
 <html>
-<body>
-SOV...2
+<head>
+<link rel="icon" href="img/icon.png" />
+<link rel="stylesheet" href="css/style.css?d=4333434">
+
+ <!-- BEGINN WALLET-INCLUDE-->
+    
+    <!-- Anchor js -->
+    <script src="https://unpkg.com/anchor-link@next"></script>
+    <script src="https://unpkg.com/anchor-link-browser-transport@next"></script>
+        
+    <!-- Scatter js -->
+    <script src="https://cdn.jsdelivr.net/npm/eosjs@16.0.9/lib/eos.min.js"></script>
+    <script src="js/bundles/scatterjs-core.min.js"></script>
+    <script src="js/bundles/scatterjs-plugin-eosjs.min.js"></script>
+    <script src="js/bundles/scatterjs-plugin-lynx.min.js"></script>    
+    
+    <script src="js/eosiowallet/wallet.js?dsd=7430324"></script>   
+    <script src="js/sovorderbook/sovorderbook.js?dsd=453523"></script>   
+              
+ <!-- END WALLET-INCLUDE-->
+
+
+</head>
+
+
+<body style='' id='bodyclass' class='bodyclass'  >
+ 
+
+
+<div id='headerarea' class='headerarea'  style=';' >
+<div style='height:15px'>&nbsp;</div>
+
+<a href='index.html'>
+<div id='headerarea_logo' onclick=''  class='headerarea_logo noselect' style=''>
+
+<div id='logoback' class='logoback' style=''>
+  <div id='logo2'  class='logo2' style=''>
+  <img src='img/logo_orderbook2.svg?t=d2443s' style='height:60px;'>
+  </div>
+
+  <div id='logo1' class='logo1' style=''>
+  <img src='img/logo_orderbook.svg?t=d45333s' style='height:60px;'>
+  </div>
+
+</div> <!-- logoback -->
+
+</div> <!-- headerarea_logo -->
+</a>
+
+
+
+<div id='headerarea_light' class='headerarea_light noselect' style=''>
+
+ <div id='outer_box2' class='outer_box2' onclick="switchbutton()"  style=''>
+  <div style='' id='but_outer' class='but_outer'>
+  <div id='but_inner' style='' class='but_inner'>
+  &nbsp;
+  </div>
+  </div>
+ </div> <!--  outer_box2 -->
+
+</div> <!-- headerarea_light -->
+
+
+
+<div id='headerarea_menu' class='headerarea_menu' onclick='switchmenu()'  style=''>
+
+<div id='menu_outer' class='menu_outer' style=''>
+<div id='burger2' class='burger2 noselect' style=''> 
+<img id='burger2_img' src='img/burger2.svg?t=d45333s'   style='width:80px;'>
+</div>
+
+<div id='burger1' class='burger1 noselect' style=''> 
+<img  id='burger1_img' src='img/burger.svg?t=d4333s'    style='width:80px;'>
+</div> 
+</div> <!-- menu_outer  -->
+
+ 
+</div> <!-- headerarea_menu -->
+
+
+
+
+
+</div> <!-- headerarea -->
+
+
+<div id='menubox' class='menubox noselect' style='' >
+<div class='menubox_item' onclick='setpage(1)'>Trade</div>
+<div class='menubox_item' onclick='setpage(3)'>Orderbook details</div>
+<div class='menubox_item' onclick='setpage(2)'>User Documentation</div>
+
+
+</div>
+<div style='clear:both;'></div>
+
+ 
+
+
+
+
+ 
+
+<!-- walletmenu -->
+
+<div id='walletmenu' style='border:none;width:100%;height:90px;'>
+
+<div id='walletmenu_left' style='float:left;position:relative;width:49%;text-align:center;margin-top:20px;background:#55ff55;'>
+
+
+ <div id='walletmenu_accountname' style='position:absolute;width:100%;top:0px;'>
+ <div id='myaccountname' class='myaccountname' style='font-size:2em;color:#888888;font-weight:bold;'>...</div>
+ </div>
+ 
+ <div id='walletmenu_anchor' style='position:absolute;width:100%;'>
+ <div onclick="login_anchor()" class='loginbutton_anchor noselect' style='margin-left:auto;margin-right:auto;' >ANCHOR</div>
+
+ </div>
+
+ 
+</div>
+
+
+
+
+
+<div id='walletmenu_right' style='float:left;position:relative;width:49%;text-align:center;margin-top:20px;background:#5555ff;'>
+  <div id='walletmenu_aaa' style='position:absolute;width:100%;'>
+  <div id='logoutbutton' onclick="logout_all()"  class='defaultbutton noselect' style='visibility:hiddenx;margin-left:auto;margin-right:auto;' >Logout</div>
+
+  </div>
+
+  <div id='walletmenu_scatter' style='position:absolute;width:100%;visibility:hiddenx;'>
+ <div onclick="login_scatter()" class='defaultbutton noselect' style='margin-left:auto;margin-right:auto;'  >SCATTER/TP/WOMBAT</div>
+
+  </div>
+
+</div>
+
+
+<div style='clear:both;'></div>
+
+
+
+
+</div> <!-- end walletmenu -->
+
+
+
+ 
+   
+   
+   
+   
+   
+   
+<div id='page1' class='page1' style=''>   
+   
+   
+<!--   
+Check-resp: <div id='checkresp' name='checkresp'>checkresp</div> 
+<script> window.addEventListener('resize', function(event) { var w = window.innerWidth; document.getElementById("checkresp").innerHTML = "w" + w + ""; }); var w = window.innerWidth; document.getElementById("checkresp").innerHTML = "w" + w + ""; </script>
+-->
+
+   
+ 
+
+<div id='tablearea' style=' '>
+
+
+Market:<br>
+<select id="divpairsselect"  onchange="setmarket(this)"  class="pairselect">  
+</select> 
+
+</div> <!-- tablearea -->
+
+
+
+ <br>
+ 
+ <div id='divtradedesk' style='' class=''>
+
+ <div class='wnd_full'>
+ 
+  <div class='wnd_half'>
+  
+  
+  
+ 
+
+
+   <div id='askbidtabletitle' class='askbidtabletitle'>
+    
+   </div>
+
+
+  <div id='orderscrolldiv_main1' class='orderscrolldiv_main'>  
+   <div id='askscrolldiv' class='orderscrolldiv'>
+   </div>
+  </div>
+
+   <div id='lastorder' style='' class='lastorder'>
+   ...
+   </div>
+
+   
+  <div id='orderscrolldiv_main2' class='orderscrolldiv_main'>  
+   <div id='bidscrolldiv' class='orderscrolldiv'>
+   </div>
+  </div>
+  
+ 
+    
+   
+  
+   
+  </div> <!-- wnd_half -->
+
+  
+  
+  
+  <div id='tradingform' class='wnd_half tradingform' style=''>
+   
+    <div class='f50 fontsmall'>
+    Buy <span id='token1'>...</span> -
+    <span id='balance1'>...</span>    
+    
+    <br>
+    <br>
+    
+    <div style='margin:5px;'>
+     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+     Price 
+     </div>
+     <div style='float:left;width:50%;'>
+     <input  type='text' onkeyup='action_keyup_buy_price_sov(event)' id='buy_price' value="0.0" class='inputfield1'  style='font-size:1.2em;'> 
+     </div>
+     <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+     SOV 
+     </div>
+     
+     <div style='clear:both'></div>
+    </div> 
+    
+     
+    <div style='margin:5px;'>
+     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+     Amount 
+     </div>
+     <div style='float:left;width:50%;'> 
+    
+     <input     type='text' onkeyup='action_keyup_buy_amount_token(event)' id='buy_amount_token' value="0.0" class='inputfield1' style='font-size:1.2em;'> 
+     </div>
+     <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+     <span id='token3'>...</span> 
+     </div>
+     <div style='clear:both'></div>
+    </div> 
+    
+ 
+   <div>
+    <div  onclick="update_price_sov_buy(25)"  class='percentbutton'>25%</div>
+    <div  onclick="update_price_sov_buy(50)"  class='percentbutton'>50%</div>
+    <div  onclick="update_price_sov_buy(75)"  class='percentbutton'>75%</div>
+    <div  onclick="update_price_sov_buy(100)" class='percentbutton'>100%</div>
+    <div style='clear:both'></div>
+   </div>
+  
+    
+    <div style='margin:5px;'>
+     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+     Total 
+     </div>
+     <div style='float:left;width:50%;'>
+
+     <input type='text' onkeyup='action_keyup_buy_amount_sov(event)' id='buy_amount_sov' value="0.0" class='inputfield1'  style='font-size:1.2em;'>  
+     </div>
+      <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+     SOV 
+     </div>
+     
+     <div style='clear:both'></div>
+    </div> 
+        
+    <br>
+    <div type="button" onclick="action_buy()" class='buybutton' style='' >Buy</div>
+
+        
+    </div> <!-- f50 -->
+
+
+
+
+    <div class='f50 fontsmall'>
+    SELL <span id='token2'>...</span> -
+    <span id='balance2'>...</span>    
+    
+    <br>
+    <br>
+    
+     <div style='margin:5px;'>
+      <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+      Price 
+      </div>
+      <div style='float:left;width:50%;'>
+      <input type='text' onkeyup='action_keyup_sell_price_sov(event)' id='sell_price' value="0.0"  class='inputfield1'  style='font-size:1.2em;'> 
+      </div>
+         <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+     SOV 
+     </div>
+      <div style='clear:both'></div>
+    </div> 
+    
+    
+    <div style='margin:5px;'>
+     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+     Amount 
+     </div>
+     <div style='float:left;width:50%;'>
+     <input type='text' onkeyup='action_keyup_sell_amount_token(event)' id='sell_amount_token' value="0.0"  class='inputfield1'  style='font-size:1.2em;'> 
+     </div>
+     <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+     <span id='token4'>...</span> 
+     </div>
+     
+     <div style='clear:both'></div>
+    </div>   
+    
+                                
+  
+   <div>
+    <div  onclick="update_price_sov_sell(25)"  class='percentbutton'>25%</div>
+    <div  onclick="update_price_sov_sell(50)"  class='percentbutton'>50%</div>
+    <div  onclick="update_price_sov_sell(75)"  class='percentbutton'>75%</div>
+    <div  onclick="update_price_sov_sell(100)" class='percentbutton'>100%</div>
+    <div style='clear:both'></div>
+   </div>
+
+
+
+      <div style='margin:5px;'>
+     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+     Total 
+     </div>
+     <div style='float:left;width:50%;'>
+     <input type='text' onkeyup='action_keyup_sell_amount_sov(event)' id='sell_amount_sov' value="0.0"  class='inputfield1'  style='font-size:1.2em;'> 
+     </div>
+        <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+     SOV 
+     </div>
+     <div style='clear:both'></div>
+    </div>   
+    
+   
+    <br>
+    <div type="button" onclick="action_sell()" class='sellbutton' style=''>Sell</div>
+    
+    </div> <!-- f50 -->
+
+  </div> <!-- wnd_half -->
+
+ </div> <!-- wnd_full -->
+
+
+<div style='clear:both'></div>
+
+</div> <!-- divtradedesk -->
+
+<br>
+ Your open orders:<br>
+  <div id='userorders_header' class='userorders_header' >
+  
+  </div>
+  
+<div id='userorders_main' class='userorders_main' style=''>
+ <div id='userorders' class='userorders' >
+ ...
+ </div> <!-- userorders -->
+</div> 
+
+ <br>
+ <div style='clear:both'></div>
+ <span onclick="cancelall()" class='cancelorderbutton'>CANCEL ALL</span>
+ 
+  
+
+ 
+
+
+
+
+ 
+ 
+
+
+</div> <!-- page1 -->
+ 
+
+<div id='page2' class='page2' style='position:relative;height:0px ; overflow:hidden;   '> 
+ <div style="margin:20px;text-align:justify;   ">
+ <h1>User Documentation</h1>
+ This is experimental - you can trade tokens against SOV without explicit trading 
+ fees. While there are no trading fees, there are still token burning fees (up to 1 percent) when transferring SOV tokens.
+ <br><br>Over time, these fees will decrease as SOV supply decreases. From a supply of 21 million, the transfer of SOV tokens will take place without burning.
+From this point on, sovorderbook will be free of charge. It is only planned to unlock some additional functions against SOV burning.
+<br><br>
+The contract is limited to 4 central functions for creating and taking trading orders. 
+This frontend will use the information about the orders and create a list of bundled 
+transactions.
+<br><br>
+(...to be continued) 
+ 
+ </div>
+</div> <!-- page2 -->
+
+
+
+
+<div id='page3' class='page3' style='position:relative;height:0px ; overflow:hidden;   '> 
+ <div style="margin:20px;text-align:justify;   ">
+ <h1>Orderbook details</h1>
+ 
+ Detailed information about the respective orders.
+  <br>
+ <br>
+ Market:<br>
+<select id="divpairsselect2"  onchange="setmarket2(this)"  class="pairselect">  
+</select> 
+
+<br>
+<br>
+ <div class='wnd_full'>
+  
+  
+  
+   
+
+
+   <div id='askbidtabletitle2' class='askbidtabletitle2'>
+   ...
+   </div>
+
+
+  <div id='orderscrolldiv_details' class='orderscrolldiv_details'>  
+   <div id='askscrolldiv2' class='orderscrolldiv'>
+   </div>
+  </div>
+
+   <div id='lastorder2' style='font-weight:bold;' class=''>
+    ...abc 
+   </div>
+
+   
+  <div id='askbidtabletitle2b' class='askbidtabletitle2'>
+   ...
+   </div> 
+  <div id='orderscrolldiv_details2' class='orderscrolldiv_details'>  
+   <div id='bidscrolldiv2' class='orderscrolldiv'>
+   </div>
+  </div>
+  
+  
+    
+   
+  
+   
+  </div> <!-- wnd_full -->
+  
+  
+ 
+ </div>
+</div> <!-- page3 -->
+
+
+
+<div id='page4' class='page4' style='position:relative;height:0px ; overflow:hidden;   '> 
+ <div style="margin:20px;text-align:justify;   ">
+ <h1>Change Node</h1>
+ 
+
+<br>
+<br>
+
+
+ </div>
+ 
+ <!--  changenodeaction(this) -->
+ 
+  
+</div> <!-- page4 -->
+
+
+<div id='footer' class='footer'>
+<div id='' class='footer_inner'>
+<a href='https://www.github.io/xxx' id='thelink' taget='_blank' class='thelink'>www.github.io/xxx</a><br>
+<br>
+sovorderbook v0.0.1
+
+<div style='float:right;'>
+
+ 
+ 
+ 
+<div id='tablearea' style='float:left;margin-right:20px;'>
+
+<select name="nodeselect" id="nodeselect"  onchange=""  class="nodeselect" style=''>  
+</select> 
+
+</div> <!-- tablearea -->
+
+<div style='float:left;'>
+ <div id='changenodebutton' onclick="changenodeaction()"  class='defaultbuttonsmall noselect' style='margin-left:auto;margin-right:20px;' >Change</div>
+</div>
+
+<div style='clear:both'></div>
+
+
+ 
+</div>
+
+</div> 
+</div> <!-- Footer -->
+
+
+<div style='clear:both;'></div>
+
+
+ 
+<div id='disclaimer_background' class='disclaimer_background' style='' >&nbsp;</div>
+
+<div id='disclaimer' class='disclaimer noselect' style='' >
+
+
+<div id='disclaimer_inner' class='disclaimer_inner' >
+ 
+ <div style='text-align:center'>
+ <h1>DISCLAIMER</h1>
+ </div>
+<br> 
+ <div style='text-align:center'>
+ NO LIABILITY! USE AT YOUR OWN RISK! NO SUPPORT!
+ </div>
+<br><br>
+sovorderbook (beta) is an experimental trading platform. The smartcontracts have not been audited by an external team. While there are no trading fees, there are still token burning fees (up to 1%) when transferring SOV tokens.
+<br><br>
+This is a community driven project and not part of the official SOV team.
+<br><br>
+The frontend is designed to be operated locally on your own computer (no server-side database). Please make sure to keep the software up to date by regularly updating the code from the official Github repository.
+<br><br>
+Further information and details can be found in the menu under "user documentation".
+<br>
+<br>
+ <div style='text-align:center'>
+  <div onclick='close_disclaimer()' class='understand_button' style=''  >I UNDERSTAND AND AGREE!</div>
+  <br>
+ </div>
+ 
+</div>
+
+</div> 
+ 
+<!-- END disclaimer -->
+
+
+
+
+<script>
+ 
+init_nodes();
+    
+setTimeout(load_pairs, 30);
+ 
+
+init_wallets( "sovorderbook",setaccountname, logoutall );
+
+
+buttonstatus_cookie = _getCookie("darkmode");
+console.log("buttonstatus_cookie: " + buttonstatus_cookie);
+if (buttonstatus_cookie) 
+   {
+   switchbutton();
+   }
+ 
+update_thread(); 
+
+const closedisclaimer = getAllUrlParams().closedisclaimer;
+if (closedisclaimer == 1) close_disclaimer();
+
+</script>
+
+
 </body>
 </html>
