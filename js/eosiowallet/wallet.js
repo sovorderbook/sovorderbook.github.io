@@ -169,9 +169,11 @@ link.login(identifier).then((result) =>
             var myeosaccount2 = _getCookie("myeosaccount");
              console.log("--- myeosaccount2: " + myeosaccount2);
             
-            global_account = session.auth.actor;                 
+            global_account = session.auth.actor;   
+            external_login_action();                
             })
                                   
+                                
 } // login_anchor()
 
 
@@ -179,6 +181,7 @@ link.login(identifier).then((result) =>
 function login_scatter()
 {
 scatterdologin();
+
 } // login_scatter()
 
 
@@ -440,7 +443,7 @@ window.scatterdologin = async () =>
         setStatus();
         setInterval(() => {
                           setStatus();
-                          }, 1000);
+                          }, 1000);                          
    
         } catch (err) {
             	      return Promise.reject(err);
@@ -484,7 +487,8 @@ function setStatus() {
                         currentwallet = "SCATTER"; 
                         func_setaccountname(scatter_account);     
                         global_account            = scatter_account;    
-                        global_account_permission = account.authority;                                  
+                        global_account_permission = account.authority;   
+                        external_login_action();                                 
                   
                         } else
                              {

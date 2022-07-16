@@ -1,7 +1,7 @@
 <html>
 <head>
 <link rel="icon" href="img/icon.png" />
-<link rel="stylesheet" href="css/style.css?d=4333434">
+<link rel="stylesheet" href="css/style.css?d=43334">
 
  <!-- BEGINN WALLET-INCLUDE-->
     
@@ -15,8 +15,8 @@
     <script src="js/bundles/scatterjs-plugin-eosjs.min.js"></script>
     <script src="js/bundles/scatterjs-plugin-lynx.min.js"></script>    
     
-    <script src="js/eosiowallet/wallet.js?dsd=7430324"></script>   
-    <script src="js/sovorderbook/sovorderbook.js?dsd=4523523"></script>   
+    <script src="js/eosiowallet/wallet.js?dsd=7424"></script>   
+    <script src="js/sovorderbook/sovorderbook.js?dsd=4523"></script>   
               
  <!-- END WALLET-INCLUDE-->
 
@@ -252,7 +252,7 @@ Market:<br>
     
      <input     type='text' onkeyup='action_keyup_buy_amount_token(event)' id='buy_amount_token' value="0.0" class='inputfield1' style='font-size:1.2em;'> 
      </div>
-     <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+     <div style='float:left;width:15%;font-size:1.2em;padding:5px; border:none;'>
      <span id='token3'>...</span> 
      </div>
      <div style='clear:both'></div>
@@ -455,6 +455,9 @@ Cleos example:
 cleos -u https://eos.greymass.com push action svxmintofeos transfer '{"from":"redanimal111","to":"sovorderbook","quantity":"0.4000 TOK","memo":"takeord;bid;28;0.4000;SOV"}' -p redanimal111
 
 </div>
+<br>
+Asks and bids are logically separated, therefore it is possible to place lower asks than bids into this orderbook.
+
  <br><br>
 (...to be continued) 
  
@@ -587,14 +590,17 @@ sovorderbook v0.0.1
  </div>
 <br> 
  <div style='text-align:center'>
- NO LIABILITY! USE AT YOUR OWN RISK! NO SUPPORT!
+ NO LIABILITY! USE AT YOUR OWN RISK! NO SUPPORT!<br>
+<br>
+ (Please only trade with assets that you are willing to lose)
  </div>
-<br><br>
+<br>
 sovorderbook (beta) is an experimental trading platform. The smartcontracts have not been audited by an external team. While there are no trading fees, there are still token burning fees (up to 1%) when transferring SOV tokens.
 <br><br>
 This is a community driven project and not part of the official SOV team.
 <br><br>
-The frontend is designed to be operated locally on your own computer (no server-side database). Please make sure to keep the software up to date by regularly updating the code from the official Github repository.
+The frontend is designed to be operated locally on your own computer (no server-side database). Please make sure to keep the software up to date by regularly updating the code from the official Github repository
+(<a href='https://github.com/sovorderbook/sovorderbook.github.io' style='color:#ffffff;'>https://github.com/sovorderbook/sovorderbook.github.io</a>).
 <br><br>
 Further information and details can be found in the menu under "user documentation".
 <br>
