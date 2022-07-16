@@ -71,10 +71,11 @@ border-top:1px solid #eeeeee;
  -moz-transition: all 0.2s ease-in-out;  
  transition: all 0.2s ease-in-out;
  
- 
+ /*
    -webkit-border-radius: 15px;
    -moz-border-radius: 15px;
     border-radius: 15px;
+    */
 }
 
 .footer_dark
@@ -889,11 +890,11 @@ border-bottom:1px solid #eeeeee;
  -moz-transition: all 0.2s ease-in-out;  
  transition: all 0.2s ease-in-out;
  
- 
+ /*
    -webkit-border-radius: 15px;
    -moz-border-radius: 15px;
     border-radius: 15px;
-
+*/
 }
 
 .headerarea_dark
