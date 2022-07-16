@@ -2049,7 +2049,9 @@ let nodearray = [
 
 let nodearray = [
     "eos.api.eosnation.io",
-    "eos.greymass.com" 
+    "eos.greymass.com",
+    "api.eossweden.org",
+    "bp.cryptolions.io"
 ];
 
 select = document.getElementById('nodeselect');   

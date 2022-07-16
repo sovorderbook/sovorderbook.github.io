@@ -16,7 +16,7 @@
     <script src="js/bundles/scatterjs-plugin-lynx.min.js"></script>    
     
     <script src="js/eosiowallet/wallet.js?dsd=7430324"></script>   
-    <script src="js/sovorderbook/sovorderbook.js?dsd=453523"></script>   
+    <script src="js/sovorderbook/sovorderbook.js?dsd=4523523"></script>   
               
  <!-- END WALLET-INCLUDE-->
 
@@ -400,15 +400,63 @@ Market:<br>
 <div id='page2' class='page2' style='position:relative;height:0px ; overflow:hidden;   '> 
  <div style="margin:20px;text-align:justify;   ">
  <h1>User Documentation</h1>
+Sovoderbook wants to give SOV-owners more possibilities to trade several EOS-tokens directly against SOV.
+ 
+ <br><br>
  This is experimental - you can trade tokens against SOV without explicit trading 
  fees. While there are no trading fees, there are still token burning fees (up to 1 percent) when transferring SOV tokens.
- <br><br>Over time, these fees will decrease as SOV supply decreases. From a supply of 21 million, the transfer of SOV tokens will take place without burning.
+ <br><br>Over time, this fees will decrease as SOV supply decreases. From a supply of 21 million, the transfer of SOV tokens will take place without burning.
 From this point on, sovorderbook will be free of charge. It is only planned to unlock some additional functions against SOV burning.
+<br><br>
+Small orders with a value <= 0.0005 SOV will become auto-canceled. 
+
+
+<br><br>
+You also can run the frontend on your local desktop PC. Please make sure to update the latest code from:<br>
+<a href='https://github.com/sovorderbook/sovorderbook.github.io'>https://github.com/sovorderbook/sovorderbook.github.io</a>
+
 <br><br>
 The contract is limited to 4 central functions for creating and taking trading orders. 
 This frontend will use the information about the orders and create a list of bundled 
-transactions.
+transactions. 
 <br><br>
+
+Contract: <a href='https://bloks.io/account/sovorderbook' target='_blank'>https://bloks.io/account/sovorderbook</a>
+The 4 actions are tokentransfers (SOV or the specific Token) with this memo-templates:<br>
+<br>
+<div style='white-space: pre-line;font-size:0.8em;'>
+<strong>A1:</strong>
+Ask-Order creation: 
+Command;ask/bid;price_in_sov;0;SOV
+"createord;ask;0.1;0;SOV"
+Cleos example: 
+cleos -u https://eos.greymass.com push action svxmintofeos transfer '{"from":"redanimal111","to":"sovorderbook","quantity":"1.0000 SVX","memo":"createord;ask;1;-1;SOV"}' -p redanimal111
+
+<strong>B1:</strong>
+Bid-Order creation:
+Command;ask/bid;preis_in_sov;TokenID(1);Name of Token
+"createord;bid;0.1;10;SVX"
+Cleos example: 
+cleos -u https://eos.greymass.com push action sovmintofeos transfer '{"from":"redanimal111","to":"sovorderbook","quantity":"1.0000 SOV","memo":"createord;bid;1;15;SVX"}' -p redanimal111
+(1)See contract table "token"
+
+<strong>A2:</strong>
+Ask-Order take:
+Command;ask/bid;ASK-Order-ID;Token amount;Name of Token
+"takeord;ask;5;10;SVX"
+Cleos example: 
+cleos -u https://eos.greymass.com push action sovmintofeos transfer '{"from":"redanimal111","to":"sovorderbook","quantity":"0.5000 SOV","memo":"takeord;ask;20;0.5000;SVX"}' -p redanimal111
+
+<strong>B2:</strong>
+Bid-Order take
+will SOV - Sende TOKEN um die jeweiligen SOV zu erhalten
+Command;ask/bid;BID-Order-ID;Token amount;SOV
+"takeord;bid;5;10;SOV"
+Cleos example: 
+cleos -u https://eos.greymass.com push action svxmintofeos transfer '{"from":"redanimal111","to":"sovorderbook","quantity":"0.4000 TOK","memo":"takeord;bid;28;0.4000;SOV"}' -p redanimal111
+
+</div>
+ <br><br>
 (...to be continued) 
  
  </div>
@@ -494,6 +542,7 @@ transactions.
 <div id='footer' class='footer'>
 <div id='' class='footer_inner'>
 <a href='https://sovorderbook.github.io/' id='thelink' target='_blank' class='thelink'>https://sovorderbook.github.io/</a><br>
+<a href='https://github.com/sovorderbook/sovorderbook.github.io'>https://github.com/sovorderbook/sovorderbook.github.io</a><br>
 <br>
 sovorderbook v0.0.1
 
