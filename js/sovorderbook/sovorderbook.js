@@ -2035,6 +2035,7 @@ if ( loaded_asks == 1 && loaded_bids == 1 )
 function external_login_action()
 {
 update_counter = 0;
+//alert("GA: "+global_account);
 }
 
 

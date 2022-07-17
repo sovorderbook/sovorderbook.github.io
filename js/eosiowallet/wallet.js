@@ -478,9 +478,10 @@ function setStatus() {
                         {
                         scatter_account = account.name;
                         curaccount = _getCookie("myeosaccount");
-                    
+                              
                         if (scatter_account != "" && curaccount != scatter_account)
                            {
+                            external_login_action();  
                            _setCookie("myeosaccount",scatter_account,30);                          
                            }
                            
@@ -488,7 +489,7 @@ function setStatus() {
                         func_setaccountname(scatter_account);     
                         global_account            = scatter_account;    
                         global_account_permission = account.authority;   
-                        external_login_action();                                 
+                                                   
                   
                         } else
                              {
