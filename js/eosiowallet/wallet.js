@@ -6,7 +6,7 @@ wallet.js - combines ANCHOR- and SCATTER/TP/WOMBAT-wallets in a single lib
 
 
 // ---
-const walletversion = "0.0.1";
+const walletversion = "0.0.1b";
 const identifier = "sovorderbook";
 var currentwallet = "";
 var func_setaccountname = null;
@@ -481,6 +481,7 @@ function setStatus() {
                               
                         if (scatter_account != "" && curaccount != scatter_account)
                            {
+                           global_account            = scatter_account; 
                             external_login_action();  
                            _setCookie("myeosaccount",scatter_account,30);                          
                            }
