@@ -632,14 +632,26 @@ for (var i=0; i < size; i++)
     price = Number(price).toFixed(6);
                                 
     samount = value.rows[i].samount;
-    samount2 = samount / Math.pow(10, last_tokenprecision)  ; //                                                                    
-    samount = Number(samount2).toFixed(last_tokenprecision);
+  //  samount2 = samount / Math.pow(10, last_tokenprecision)  ; //                                                                    
+   // samount = Number(samount2).toFixed(last_tokenprecision);
+
+    samount2 = samount / Math.pow(10, 4)  ; //                                                                    
+    samount = Number(samount2).toFixed(4);
                                 
     var amount_sov2 = value.rows[i].amount;
     amount_sov2 = amount_sov2 / Math.pow(10, 4);  
     amount_sov = Number(amount_sov2).toFixed(4);
                               
-                                
+           /*
+             samount = value.rows[i].samount;
+    samount2 = samount / Math.pow(10, last_tokenprecision)  ; //                                                                    
+    samount = Number(samount2).toFixed(last_tokenprecision);
+
+    amount = value.rows[i].amount;
+    amount2 = amount / Math.pow(10, last_tokenprecision)  ; //                                                                    
+    amount = Number(amount2).toFixed(last_tokenprecision);
+           
+           */                     
     tokenid = value.rows[i].tokenid;
                              
                                 
@@ -860,8 +872,11 @@ for (var i=0; i < size; i++)
     price = Number(price).toFixed(6);
                                 
     samount = value.rows[i].samount;
-    samount2 = samount / Math.pow(10, last_tokenprecision)  ; //                                                                    
+/*    samount2 = samount / Math.pow(10, last_tokenprecision)  ; //                                                                    
     samount = Number(samount2).toFixed(last_tokenprecision);
+  */
+    samount2 = samount / Math.pow(10, 4)  ; //                                                                    
+    samount = Number(samount2).toFixed(4);
                                 
     var amount_sov2 = value.rows[i].amount;
     amount_sov2 = amount_sov2 / Math.pow(10, 4)  ; // 
@@ -1804,6 +1819,11 @@ if ( loaded_asks == 1 && loaded_bids == 1 )
    {
    size_ask = last_orders_ask.length;
    size_bid = last_orders_bid.length;
+
+console.log("ask:::");   
+   console.log(last_orders_ask)
+console.log("bid:::");   
+   console.log(last_orders_bid)
 
    buffer = "";   
    buffer += "<div class='' style=''>";                              
