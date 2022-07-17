@@ -348,7 +348,18 @@ element.classList.toggle("nodeselect_dark");
 var element = document.getElementById('thelink');
 element.classList.toggle("thelink_dark");
 
-
+var element = document.getElementById('token_area1');
+element.classList.toggle("token_area_dark");
+var element = document.getElementById('token_area2');
+element.classList.toggle("token_area_dark");
+var element = document.getElementById('token_area3');
+element.classList.toggle("token_area_dark");
+var element = document.getElementById('token_area4');
+element.classList.toggle("token_area_dark");
+var element = document.getElementById('token_area5');
+element.classList.toggle("token_area_dark");
+var element = document.getElementById('token_area6');
+element.classList.toggle("token_area_dark");
  
 } // function switchbutton() 
 

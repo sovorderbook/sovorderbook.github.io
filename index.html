@@ -1,7 +1,7 @@
 <html>
 <head>
 <link rel="icon" href="img/icon.png" />
-<link rel="stylesheet" href="css/style.css?d=433434">
+<link rel="stylesheet" href="css/style.css?d=43343434">
 
  <!-- BEGINN WALLET-INCLUDE-->
     
@@ -15,8 +15,8 @@
     <script src="js/bundles/scatterjs-plugin-eosjs.min.js"></script>
     <script src="js/bundles/scatterjs-plugin-lynx.min.js"></script>    
     
-    <script src="js/eosiowallet/wallet.js?dsd=7424"></script>   
-    <script src="js/sovorderbook/sovorderbook.js?dsd=45323"></script>   
+    <script src="js/eosiowallet/wallet.js?dsd=7498524"></script>   
+    <script src="js/sovorderbook/sovorderbook.js?dsd=45983323"></script>   
               
  <!-- END WALLET-INCLUDE-->
 
@@ -230,14 +230,14 @@ Market:<br>
     <br>
     
     <div style='margin:5px;'>
-     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+     <div class='amount_area' style=''>
      Price 
      </div>
-     <div style='float:left;width:50%;'>
+     <div style='float:left;width:45%;'>
      <input  type='text' onkeyup='action_keyup_buy_price_sov(event)' id='buy_price' value="0.0" class='inputfield1'  style='font-size:1.2em;'> 
      </div>
-     <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
-     SOV 
+     <div   id='token_area1' class='token_area' >
+     SOV
      </div>
      
      <div style='clear:both'></div>
@@ -245,14 +245,14 @@ Market:<br>
     
      
     <div style='margin:5px;'>
-     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+     <div class='amount_area' style=''>
      Amount 
      </div>
-     <div style='float:left;width:50%;'> 
+     <div style='float:left;width:45%;'> 
     
      <input     type='text' onkeyup='action_keyup_buy_amount_token(event)' id='buy_amount_token' value="0.0" class='inputfield1' style='font-size:1.2em;'> 
      </div>
-     <div style='float:left;width:15%;font-size:1.2em;padding:5px; border:none;'>
+      <div   id='token_area2' class='token_area' >
      <span id='token3'>...</span> 
      </div>
      <div style='clear:both'></div>
@@ -269,14 +269,14 @@ Market:<br>
   
     
     <div style='margin:5px;'>
-     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+     <div class='amount_area' style=''>
      Total 
      </div>
-     <div style='float:left;width:50%;'>
+     <div style='float:left;width:45%;'>
 
      <input type='text' onkeyup='action_keyup_buy_amount_sov(event)' id='buy_amount_sov' value="0.0" class='inputfield1'  style='font-size:1.2em;'>  
      </div>
-      <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+      <div id='token_area3' class='token_area'  >
      SOV 
      </div>
      
@@ -300,13 +300,13 @@ Market:<br>
     <br>
     
      <div style='margin:5px;'>
-      <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+      <div class='amount_area' style=''>
       Price 
       </div>
-      <div style='float:left;width:50%;'>
+      <div style='float:left;width:45%;'>
       <input type='text' onkeyup='action_keyup_sell_price_sov(event)' id='sell_price' value="0.0"  class='inputfield1'  style='font-size:1.2em;'> 
       </div>
-         <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+          <div id='token_area4' class='token_area'  >
      SOV 
      </div>
       <div style='clear:both'></div>
@@ -314,13 +314,13 @@ Market:<br>
     
     
     <div style='margin:5px;'>
-     <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
+      <div class='amount_area' style=''>
      Amount 
      </div>
-     <div style='float:left;width:50%;'>
+     <div style='float:left;width:45%;'>
      <input type='text' onkeyup='action_keyup_sell_amount_token(event)' id='sell_amount_token' value="0.0"  class='inputfield1'  style='font-size:1.2em;'> 
      </div>
-     <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+      <div id='token_area5' class='token_area'  >
      <span id='token4'>...</span> 
      </div>
      
@@ -343,10 +343,10 @@ Market:<br>
      <div style='float:left;width:23%;font-size:1.2em;padding:5px;'>
      Total 
      </div>
-     <div style='float:left;width:50%;'>
+     <div style='float:left;width:45%;'>
      <input type='text' onkeyup='action_keyup_sell_amount_sov(event)' id='sell_amount_sov' value="0.0"  class='inputfield1'  style='font-size:1.2em;'> 
      </div>
-        <div style='float:left;width:15%;font-size:1.2em;padding:5px;'>
+        <div id='token_area6' class='token_area'  >
      SOV 
      </div>
      <div style='clear:both'></div>
