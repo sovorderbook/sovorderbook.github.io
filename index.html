@@ -400,15 +400,13 @@ Market:<br>
 <div id='page2' class='page2' style='position:relative;height:0px ; overflow:hidden;   '> 
  <div style="margin:20px;text-align:justify;   ">
  <h1>User Documentation</h1>
-Sovoderbook wants to give SOV-owners more possibilities to trade several EOS-tokens directly against SOV.
+Sovorderbook aims to give SOV owners the ability to trade a wider range of EOS tokens directly against SOV..
  
  <br><br>
- This is experimental - you can trade tokens against SOV without explicit trading 
- fees. While there are no trading fees, there are still token burning fees (up to 1 percent) when transferring SOV tokens.
- <br><br>Over time, this fees will decrease as SOV supply decreases. From a supply of 21 million, the transfer of SOV tokens will take place without burning.
-From this point on, sovorderbook will be free of charge. It is only planned to unlock some additional functions against SOV burning.
+This is experimental - you can trade tokens against SOV without incurring any trading fees. Even though there are no trading fees, there is still a transfer burning fee (up to 1%) when transferring SOV tokens.
+ <br><br>Over time these fees will decrease as SOV supply decreases. After reaching a supply of 21 million the transfer of SOV tokens will take place without burning. From this point on sovorderbook will be free of charge. This product aims to add utility and hasten the SOV burning process.
 <br><br>
-Small orders with a value <= 0.0005 SOV will become auto-canceled. 
+Small orders with a value <= 0.0005 SOV will become auto-canceled.
 
 
 <br><br>
@@ -416,9 +414,7 @@ You also can run the frontend on your local desktop PC. Please make sure to upda
 <a href='https://github.com/sovorderbook/sovorderbook.github.io'>https://github.com/sovorderbook/sovorderbook.github.io</a>
 
 <br><br>
-The contract is limited to 4 central functions for creating and taking trading orders. 
-This frontend will use the information about the orders and create a list of bundled 
-transactions. 
+The contract is limited to 4 central functions for creating and taking trade orders. This frontend will use the information about the orders and create a list of bundled transactions.
 <br><br>
 
 Contract: <a href='https://bloks.io/account/sovorderbook' target='_blank'>https://bloks.io/account/sovorderbook</a>
@@ -456,8 +452,7 @@ cleos -u https://eos.greymass.com push action svxmintofeos transfer '{"from":"re
 
 </div>
 <br>
-Asks and bids are logically separated, therefore it is possible to place lower asks than bids into this orderbook.
-
+Asks and bids are logically separated, therefore it is possible to place lower asks than bids when using sovorderbook.
  <br><br>
 (...to be continued) 
  
